@@ -4,6 +4,8 @@ public class SentenceGenerator implements SGenerator {
     private Subject generator;
     private ArrayList<String> vocab;
 
+    GenBehaviour genBehaviour;
+
     public SentenceGenerator(Subject generator) {
         vocab = new ArrayList<String>();
         this.generator = generator;
@@ -14,6 +16,14 @@ public class SentenceGenerator implements SGenerator {
     public void update(String word) {
         this.vocab.add(word);
         display();
+    }
+
+    public void setGenBehaviour(GenBehaviour genBehaviour){
+        this.genBehaviour = genBehaviour;
+    }
+
+    public void generate(){
+        genBehaviour.generate();
     }
 
     public void display() {
