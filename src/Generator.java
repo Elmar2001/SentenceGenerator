@@ -1,21 +1,21 @@
 import java.util.ArrayList;
 
 public class Generator implements Subject {
-    private ArrayList<SGenerator> sgenerators;
+    private ArrayList<Observer> observers;
     private String word;
 
     public Generator() {
-        sgenerators = new ArrayList<SGenerator>();
+        observers = new ArrayList<Observer>();
     }
 
     @Override
-    public void registerGenerator(SGenerator sgenerator) {
-        sgenerators.add(sgenerator);
+    public void registerGenerator(Observer sgenerator) {
+        observers.add(sgenerator);
     }
 
     @Override
     public void notifyGenerators() {
-        for (SGenerator sg : sgenerators) {
+        for (Observer sg : observers) {
             sg.update(word);
         }
     }

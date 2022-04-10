@@ -10,18 +10,29 @@ public class Vocabulary {
 
         Generator gen = new Generator();
 
-
-        // Create and attach observers (Auction Bidders)
-        SentenceGenerator sg = new SentenceGenerator(gen);
-        SentenceGenerator sg2 = new SentenceGenerator(gen);
-        SentenceGenerator sg3 = new SentenceGenerator(gen);
+        SentenceGenerator sg = new RandomSentenceGenerator(gen);
+        SentenceGenerator sg2 = new SortedSentenceGenerator(gen);
+        SentenceGenerator sg3 = new OrderedSentenceGenerator(gen);
 
         gen.wordChanged("Test1");
+        gen.wordChanged("Test4");
+        gen.wordChanged("Test5");
+        gen.wordChanged("Test6");
+        gen.wordChanged("Test7");
+        gen.wordChanged("Test8");
+        gen.wordChanged("Test9");
+
         System.out.println();
         gen.wordChanged("Test2");
         System.out.println();
         gen.wordChanged("Test3");
         System.out.println();
+
+        sg.generate();
+        sg2.generate();
+        sg3.generate();
+
+
 
 
     }

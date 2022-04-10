@@ -1,4 +1,4 @@
 public interface Subject {
-    void registerGenerator(SGenerator b);
+    void registerGenerator(Observer b);
     void notifyGenerators();
 }

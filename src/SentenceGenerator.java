@@ -1,8 +1,8 @@
 import java.util.ArrayList;
 
-public class SentenceGenerator implements SGenerator {
-    private Subject generator;
-    private ArrayList<String> vocab;
+public abstract class SentenceGenerator implements Observer {
+    protected Subject generator;
+    protected ArrayList<String> vocab;
 
     GenBehaviour genBehaviour;
 
@@ -13,10 +13,11 @@ public class SentenceGenerator implements SGenerator {
     }
 
     @Override
-    public void update(String word) {
-        this.vocab.add(word);
-        display();
-    }
+    public abstract void update(String word);
+//    {
+//        this.vocab.add(word);
+//        display();
+//    }
 
     public void setGenBehaviour(GenBehaviour genBehaviour){
         this.genBehaviour = genBehaviour;
