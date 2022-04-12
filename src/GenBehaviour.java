@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public interface GenBehaviour {
-    public void generate();
+    public void generate(ArrayList<String> vocab);
 }

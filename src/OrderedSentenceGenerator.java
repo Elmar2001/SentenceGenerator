@@ -10,6 +10,9 @@ public class OrderedSentenceGenerator extends SentenceGenerator {
 
     @Override
     public void update(String word) {
+        StringBuilder sb = new StringBuilder(word.toUpperCase());
+        sb.reverse();
+        this.vocab.add(sb.toString());
 
     }
 

@@ -1,10 +1,10 @@
 import java.util.ArrayList;
 
 public abstract class SentenceGenerator implements Observer {
-    protected Subject generator;
-    protected ArrayList<String> vocab;
+    protected Subject generator;  // concrete observers have a concrete subject
+    protected ArrayList<String> vocab; // made static
 
-    GenBehaviour genBehaviour;
+    GenBehaviour genBehaviour;  // behavior to generate sentences
 
     public SentenceGenerator(Subject generator) {
         vocab = new ArrayList<String>();
@@ -14,17 +14,13 @@ public abstract class SentenceGenerator implements Observer {
 
     @Override
     public abstract void update(String word);
-//    {
-//        this.vocab.add(word);
-//        display();
-//    }
 
     public void setGenBehaviour(GenBehaviour genBehaviour){
         this.genBehaviour = genBehaviour;
     }
 
-    public void generate(){
-        genBehaviour.generate();
+    public void generate(){ // invoke generate() method of all behavior classes
+        genBehaviour.generate(vocab);   // pass vocabulary
     }
 
     public void display() {

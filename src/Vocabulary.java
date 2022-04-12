@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Vocabulary {
 
     public static void main(String[] args) {
-        System.out.println("Enter words: ");
+//        System.out.println("Enter words: ");
         Scanner sc = new Scanner(System.in);
 
 //        String word = sc.nextLine();
@@ -21,12 +21,8 @@ public class Vocabulary {
         gen.wordChanged("Test7");
         gen.wordChanged("Test8");
         gen.wordChanged("Test9");
-
-        System.out.println();
         gen.wordChanged("Test2");
-        System.out.println();
         gen.wordChanged("Test3");
-        System.out.println();
 
         sg.generate();
         sg2.generate();

@@ -14,19 +14,8 @@ public class RandomSentenceGenerator extends SentenceGenerator {
     }
 
     @Override
-    public void update(String word) {
-        Random rand = new Random();
-
+    public void update(String word) {  // simply adds the lowercase word to the vocab
         this.vocab.add(word.toLowerCase());
-        int till = rand.nextInt(vocab.size());
-        ArrayList<String> ret = new ArrayList<String>();
-
-        for (int i = 0; i < till; i++) {
-            int index = rand.nextInt(vocab.size());
-            ret.add(vocab.get(index));
-        }
-
-        System.out.println(String.join(" ", ret));
     }
 
 

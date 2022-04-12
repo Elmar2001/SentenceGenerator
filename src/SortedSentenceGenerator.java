@@ -10,7 +10,7 @@ public class SortedSentenceGenerator extends SentenceGenerator {
 
     @Override
     public void update(String word) {
-
+        this.vocab.add(word.toLowerCase());
     }
 
 }
