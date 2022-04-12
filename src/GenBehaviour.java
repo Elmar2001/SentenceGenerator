@@ -1,5 +1,11 @@
 import java.util.ArrayList;
 
+/**
+ * GenBehaviour is the interface that provides generate() method to be implemented by concrete behaviour classes:
+ * RSGBehaviour, SSGBehaviour, OSGBehaviour. Because, sentence generators have different behaviours, such as making
+ * the word uppercase or lowercase before adding it to the vocabulary.
+ */
+
 public interface GenBehaviour {
-    public void generate(ArrayList<String> vocab);
+    void generate(ArrayList<String> vocab);
 }

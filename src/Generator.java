@@ -1,28 +1,33 @@
 import java.util.ArrayList;
 
+/**
+ * Generator class is the concrete implementation of Subject interface. Its main purpose is to keep a list of observers
+ * and inform them about newly added words.
+ */
+
 public class Generator implements Subject {
-    private ArrayList<Observer> observers;
-    private String word;
+    private ArrayList<Observer> observers;  // list of observers
+    private String word;  // latest added word
 
     public Generator() {
-        observers = new ArrayList<Observer>();
+        observers = new ArrayList<Observer>();  // instantiate list of observers
     }
 
     @Override
-    public void registerGenerator(Observer sgenerator) {
-        observers.add(sgenerator);
+    public void registerGenerator(Observer observer) { // to manually add a new observer
+        observers.add(observer);
     }
 
     @Override
     public void notifyGenerators() {
-        for (Observer sg : observers) {
-            sg.update(word);
+        for (Observer o : observers) {
+            o.update(word); // send the word to each observer
         }
     }
 
-    public void wordChanged(String word) {
+    public void wordAdded(String word) {  // new word to add/added  by the user
         this.word = word;
-        notifyGenerators();
+        notifyGenerators(); // notify all observers to add the word to their vocabulary
     }
 
 }
