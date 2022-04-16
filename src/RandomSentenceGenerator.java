@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class RandomSentenceGenerator extends SentenceGenerator {
 
 /**
@@ -10,11 +12,17 @@ public class RandomSentenceGenerator extends SentenceGenerator {
     public RandomSentenceGenerator(Subject generator) {
         super(generator);
         genBehaviour = new RSGBehaviour(); // RandomSentenceGenerator has RSGBehaviour that implements task above
+        addBehaviour = new LowerCaseBehaviour();
     }
 
     @Override
-    public void update(String word) {  // RandomSentenceGenerator adds lowercase version of word to vocabulary
-        this.vocab.add(word.toLowerCase());
+    protected void invokeAddWord(String word, ArrayList<String> vocab) {
+        addBehaviour.addWord(word, vocab);
     }
+
+//    @Override
+//    public void update(String word) {  // RandomSentenceGenerator adds lowercase version of word to vocabulary
+//        this.vocab.add(word.toLowerCase());
+//    }
 
 }

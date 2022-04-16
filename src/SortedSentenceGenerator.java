@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class SortedSentenceGenerator extends SentenceGenerator {
 
 /**
@@ -9,11 +11,17 @@ public class SortedSentenceGenerator extends SentenceGenerator {
     public SortedSentenceGenerator(Subject generator) {
         super(generator);
         genBehaviour = new SSGBehaviour(); // SortedSentenceGenerator has SSGBehaviour that implements task above
+        addBehaviour = new LowerCaseBehaviour();
     }
 
     @Override
-    public void update(String word) {   // SortedSentenceGenerator adds lowercase version of word to vocabulary
-        this.vocab.add(word.toLowerCase());
+    protected void invokeAddWord(String word, ArrayList<String> vocab) {
+        addBehaviour.addWord(word, vocab);
     }
+//
+//    @Override
+//    public void update(String word) {   // SortedSentenceGenerator adds lowercase version of word to vocabulary
+//        this.vocab.add(word.toLowerCase());
+//    }
 
 }
