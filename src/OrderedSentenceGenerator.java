@@ -11,7 +11,7 @@ public class OrderedSentenceGenerator extends SentenceGenerator {
     public OrderedSentenceGenerator(Subject generator) {
         super(generator);
         genBehaviour = new OSGBehaviour(); // OrderedSentenceGenerator has OSGBehaviour that implements task above
-        addBehaviour = new UpperCaseReverseBehaviour();
+        addBehaviour = new UpperCaseReverseBehaviour(); //OrderedSentenceGenerator uses UpperCaseReverseBehaviour
     }
 
     @Override

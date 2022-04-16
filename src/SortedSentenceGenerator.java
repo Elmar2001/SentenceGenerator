@@ -11,7 +11,7 @@ public class SortedSentenceGenerator extends SentenceGenerator {
     public SortedSentenceGenerator(Subject generator) {
         super(generator);
         genBehaviour = new SSGBehaviour(); // SortedSentenceGenerator has SSGBehaviour that implements task above
-        addBehaviour = new LowerCaseBehaviour();
+        addBehaviour = new LowerCaseBehaviour(); // SortedSentenceGenerator needs to convert words to lowercase before adding to vocabulary
     }
 
     @Override

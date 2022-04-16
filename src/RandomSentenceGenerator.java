@@ -12,7 +12,7 @@ public class RandomSentenceGenerator extends SentenceGenerator {
     public RandomSentenceGenerator(Subject generator) {
         super(generator);
         genBehaviour = new RSGBehaviour(); // RandomSentenceGenerator has RSGBehaviour that implements task above
-        addBehaviour = new LowerCaseBehaviour();
+        addBehaviour = new LowerCaseBehaviour(); // RandomSentenceGenerator needs to convert words to lowercase before adding to vocabulary
     }
 
     @Override
