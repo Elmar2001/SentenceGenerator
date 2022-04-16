@@ -18,12 +18,4 @@ public class OrderedSentenceGenerator extends SentenceGenerator {
     protected void invokeAddWord(String word, ArrayList<String> vocab) {
         addBehaviour.addWord(word, vocab);
     }
-
-//    @Override
-//    public void update(String word) { // OrderedSentenceGenerator adds uppercase+reversed version of word to vocabulary
-//        StringBuilder sb = new StringBuilder(word.toUpperCase()); // convert uppercase word to StringBuilder
-//        sb.reverse();   // reverse the string
-//        this.vocab.add(sb.toString());  // append it to the vocabulary
-//    }
-
 }

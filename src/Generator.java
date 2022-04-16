@@ -27,6 +27,7 @@ public class Generator implements Subject {
 
     public void wordAdded(String word) {  // new word to add/added  by the user
         this.word = word;
+        System.out.println("New word added to vocabulary: " + word);
         notifyGenerators(); // notify all observers to add the word to their vocabulary
     }
 

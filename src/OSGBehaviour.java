@@ -8,7 +8,7 @@ public class OSGBehaviour implements GenBehaviour{
 
     @Override
     public void generate(ArrayList<String> vocab) {
-        System.out.println("OSGBehaviour!");
+        System.out.print("OSGBehaviour: ");
         System.out.println(String.join(" ", vocab)); // print space seperated all words in vocabulary
     }
 

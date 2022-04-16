@@ -10,7 +10,7 @@ public abstract class SentenceGenerator implements Observer {
 
     protected Subject generator;  // concrete observers have a concrete subject
     protected ArrayList<String> vocab; // each subclass will have its own vocabulary
-    AddBehaviour addBehaviour;
+    AddBehaviour addBehaviour;  // behaviour to add words to vocabulary
     GenBehaviour genBehaviour;  // behavior to generate sentences
 
     public SentenceGenerator(Subject generator) {
@@ -18,14 +18,13 @@ public abstract class SentenceGenerator implements Observer {
         this.generator = generator;
         generator.registerGenerator(this); // attach this observer to subject
     }
-    protected abstract void invokeAddWord(String word, ArrayList<String> vocab);
+    protected abstract void invokeAddWord(String word, ArrayList<String> vocab); // each generator will implement this method
 
     @Override
     public void update(String word){
-        invokeAddWord(word, vocab);
+        invokeAddWord(word, vocab); // invoke addWord method
         generate();  // each time a new word is added, generate a sentence
     }
-    // update() class to be implemented by concrete sentence generators
 
 //    Commenting since this method will not be needed for our use
 //    public void setGenBehaviour(GenBehaviour genBehaviour){ // the behaviour can be changed
@@ -35,8 +34,4 @@ public abstract class SentenceGenerator implements Observer {
     public void generate(){ // invoke generate() method of all behavior classes
         genBehaviour.generate(vocab);   // pass vocabulary as parameter
     }
-
-//    public void display() { // the recently added word can be displayed by the  observers
-//        System.out.println("New word: " + vocab.get(vocab.size()-1));
-//    }
 }
