@@ -18,10 +18,5 @@ public class SortedSentenceGenerator extends SentenceGenerator {
     protected void invokeAddWord(String word, ArrayList<String> vocab) {
         addBehaviour.addWord(word, vocab);
     }
-//
-//    @Override
-//    public void update(String word) {   // SortedSentenceGenerator adds lowercase version of word to vocabulary
-//        this.vocab.add(word.toLowerCase());
-//    }
 
 }

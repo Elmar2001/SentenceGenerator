@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 /**
- * LowerBehaviour is printing random words from the dictionary.
+ * LowerCaseBehaviour adds the lowercase of the word to the vocabulary
  */
 
 public class LowerCaseBehaviour implements AddBehaviour{

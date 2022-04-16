@@ -1,5 +1,8 @@
 import java.util.Scanner;
 
+/**
+ * Vocabulary class initializes generators and interacts with the user through the console to generate sentences.
+ */
 public class Vocabulary {
 
     public static void main(String[] args) {
@@ -12,24 +15,17 @@ public class Vocabulary {
         SentenceGenerator sortedSentenceGenerator = new SortedSentenceGenerator(gen);
         SentenceGenerator orderedSentenceGenerator = new OrderedSentenceGenerator(gen);
 
-        String input;
         System.out.println("Starting sentence generator...");
         System.out.println("Enter words to add them to vocabulary and to generate sentences (CMD+D or CTRL+Z to quit)");
 
-        while (sc.hasNext()){
-            input = sc.nextLine();
-            gen.wordAdded(input);
+        String input;
 
+        while (sc.hasNext()){
+            input = sc.nextLine(); // accept input from console
+            gen.wordAdded(input); // inform observers about the new word
         }
 
-        // Add words and inform observers
-//        gen.wordAdded("Hello");
-//        gen.wordAdded("Hi");
-
-        // Generate sentences
-//        randomSentenceGenerator.generate();
-//        sortedSentenceGenerator.generate();
-//        orderedSentenceGenerator.generate();
+        System.out.print("Exiting...");
 
     }
 }

@@ -26,11 +26,6 @@ public abstract class SentenceGenerator implements Observer {
         generate();  // each time a new word is added, generate a sentence
     }
 
-//    Commenting since this method will not be needed for our use
-//    public void setGenBehaviour(GenBehaviour genBehaviour){ // the behaviour can be changed
-//        this.genBehaviour = genBehaviour;
-//    }
-
     public void generate(){ // invoke generate() method of all behavior classes
         genBehaviour.generate(vocab);   // pass vocabulary as parameter
     }

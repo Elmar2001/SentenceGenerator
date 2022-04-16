@@ -1,5 +1,8 @@
 import java.util.ArrayList;
 
+/**
+ * This behaviour is to make a word uppercase, and reverse it then add to vocabulary
+ */
 public class UpperCaseReverseBehaviour implements AddBehaviour{
     @Override
     public void addWord(String word, ArrayList<String> vocab) {

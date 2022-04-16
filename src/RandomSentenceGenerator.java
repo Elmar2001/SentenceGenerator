@@ -20,9 +20,4 @@ public class RandomSentenceGenerator extends SentenceGenerator {
         addBehaviour.addWord(word, vocab);
     }
 
-//    @Override
-//    public void update(String word) {  // RandomSentenceGenerator adds lowercase version of word to vocabulary
-//        this.vocab.add(word.toLowerCase());
-//    }
-
 }

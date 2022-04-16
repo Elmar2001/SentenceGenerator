@@ -7,5 +7,5 @@ import java.util.ArrayList;
  */
 
 public interface AddBehaviour {
-    void addWord(String word, ArrayList<String> vocab);
+    void addWord(String word, ArrayList<String> vocab); // vocab (ArrayList) is passed as a reference in Java
 }
